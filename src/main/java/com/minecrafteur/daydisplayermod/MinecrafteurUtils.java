@@ -1,9 +1,7 @@
 package com.minecrafteur.daydisplayermod;
-
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.server.MinecraftServer;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.text.Text;
-import net.minecraft.world.World;
 import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
@@ -55,18 +53,16 @@ public class MinecrafteurUtils {
         return sendChat(minecraftClient, message, false);
     }
 
-    public static MinecraftServer getServerWorld(MinecraftClient minecraftClient) {
-        if (minecraftClient.isConnectedToLocalServer()) {
-            return minecraftClient.getServer();
-        }
-
-        return null;
-    }
 
     public static long worldTime(MinecraftClient minecraftClient) {
         try {
-            MinecraftServer server = getServerWorld(minecraftClient);
-            return server.getWorld(World.OVERWORLD).getTimeOfDay();
+            ClientWorld world = minecraftClient.world;
+            if (world != null) {
+
+                return world.getTimeOfDay();
+            } else {
+                LOGGER.error("ClientWorld is null");
+            }
 
         } catch (Exception e) {
 
