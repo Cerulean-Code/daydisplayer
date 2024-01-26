@@ -21,6 +21,7 @@
     "client": [
       "com.minecrafteur.daydisplayermod.DayDisplayerClient"
     ],
+    "server": ["com.minecrafteur.daydisplayermod.DayDisplayerServer"],
     "fabric-datagen": [
       "com.minecrafteur.daydisplayermod.DayDisplayerDataGenerator"
     ]
