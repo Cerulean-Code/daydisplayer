@@ -11,8 +11,6 @@ import org.slf4j.LoggerFactory;
 
 
 public class MinecrafteurUtils {
-
-    private static KeyBinding keyBinding;
     protected static String MOD_ID;
     protected static Logger LOGGER;
 
