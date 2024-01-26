@@ -8,10 +8,6 @@ import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 // time of 1 mc day in ticks 24000
 public class MinecrafteurUtils {
     // reading fabric json
@@ -61,11 +57,7 @@ public class MinecrafteurUtils {
 
     public static MinecraftServer getServerWorld(MinecraftClient minecraftClient) {
         if (minecraftClient.isConnectedToLocalServer()) {
-            MinecraftServer minecraftServer = minecraftClient.getServer();
-
-            if (minecraftServer != null) {
-                return minecraftServer;
-            }
+            return minecraftClient.getServer();
         }
 
         return null;
