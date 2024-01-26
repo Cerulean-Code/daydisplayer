@@ -21,7 +21,9 @@
     "client": [
       "com.minecrafteur.daydisplayermod.DayDisplayerClient"
     ],
-    "server": ["com.minecrafteur.daydisplayermod.DayDisplayerServer"],
+    "server": [
+      "com.minecrafteur.daydisplayermod.DayDisplayerServer"
+    ],
     "fabric-datagen": [
       "com.minecrafteur.daydisplayermod.DayDisplayerDataGenerator"
     ]
@@ -33,7 +35,8 @@
     "fabricloader": ">=0.14.25",
     "minecraft": "~1.20.1",
     "java": ">=17",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "fabric-key-binding-api-v1": "*"
   },
   "suggests": {
     "another-mod": "*"

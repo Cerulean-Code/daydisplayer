@@ -1,23 +1,26 @@
 package com.minecrafteur.daydisplayermod;
+
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.util.InputUtil;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.text.Text;
+import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
 
-// time of 1 mc day in ticks 24000
-public class MinecrafteurUtils {
-    // reading fabric json
 
+public class MinecrafteurUtils {
+
+    private static KeyBinding keyBinding;
     protected static String MOD_ID;
     protected static Logger LOGGER;
 
     public MinecrafteurUtils() {
         MOD_ID = "daydisplayermod";
         LOGGER = LoggerFactory.getLogger(MOD_ID);
-
-
     }
 
 
@@ -27,7 +30,7 @@ public class MinecrafteurUtils {
      * @param minecraftClient The instance of the Minecraft client.
      * @return True if the player is in the world and not null; otherwise, false.
      */
-    public static Boolean isPlayerInWorld(MinecraftClient minecraftClient) {
+    private static Boolean isPlayerInWorld(MinecraftClient minecraftClient) {
         return minecraftClient.world != null && minecraftClient.player != null;
     }
 
@@ -98,4 +101,4 @@ public class MinecrafteurUtils {
 
         return dayTicks;
     }
-}
+    }
