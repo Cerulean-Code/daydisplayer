@@ -11,10 +11,6 @@ import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
-
-import static com.minecrafteur.daydisplayermod.MinecrafteurUtils.MOD_ID;
-
-
 public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer {
     public static KeyBinding keyBinding;
 

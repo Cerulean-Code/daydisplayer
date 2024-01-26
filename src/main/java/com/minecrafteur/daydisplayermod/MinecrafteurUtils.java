@@ -1,12 +1,10 @@
 package com.minecrafteur.daydisplayermod;
 
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.util.InputUtil;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.text.Text;
-import org.lwjgl.glfw.GLFW;
 import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
