@@ -63,6 +63,10 @@ Download the Day Displayer Mod from [here](https://github.com/Cerulean-Code/dayd
   - [ ] Display Style: Visual styles for the day/time display.
   - [ ] Display Position: Screen position for day/time info.
   - [ ] Alert Frequency: Conditions for new day alerts.
+  - [ ] Time Format: Toggle between 12-hour and 24-hour clock formats.
+     
+
+
 
 
 ## 💬 Feedback and Contributions
