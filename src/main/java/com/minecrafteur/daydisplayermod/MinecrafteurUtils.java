@@ -72,7 +72,6 @@ public class MinecrafteurUtils {
         return sendChat(minecraftClient, message, false);
     }
 
-
     public static long worldTime(MinecraftClient minecraftClient) {
         try {
             ClientWorld world = minecraftClient.world;
@@ -105,8 +104,7 @@ public class MinecrafteurUtils {
     public static void showFullDay(MinecraftClient client) {
         showDay(client);
         MinecrafteurUtils.sendChat(client, MinecrafteurUtils.colors.getOrDefault("White", "") + "Time: " + MinecrafteurUtils.getWorldTime(client).getHours() + ":" + MinecrafteurUtils.getWorldTime(client).getMinutes() + ":" + MinecrafteurUtils.getWorldTime(client).getSeconds());
-        sendBlankChat(client);
-    }
 
+    }
 
 }

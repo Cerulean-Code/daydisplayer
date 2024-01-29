@@ -22,13 +22,15 @@ public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (dayKeyBinding.wasPressed()) {
                 MinecrafteurUtils.showDay(client);
-            }
-        });
+                MinecrafteurUtils.sendChat(client, MinecrafteurUtils.colors.getOrDefault("Dark Gray", "") + "-----------------");
 
-        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            }
+
             while
             (dayFullKeyBinding.wasPressed()) {
                 MinecrafteurUtils.showFullDay(client);
+                MinecrafteurUtils.sendChat(client, MinecrafteurUtils.colors.getOrDefault("Dark Gray", "") + "-----------------");
+
             }
         });
 
