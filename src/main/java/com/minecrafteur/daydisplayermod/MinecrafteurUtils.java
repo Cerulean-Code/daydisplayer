@@ -80,7 +80,7 @@ public class MinecrafteurUtils {
     }
 
     public static void showDay(MinecraftClient client) {
-        MinecrafteurUtils.sendChat(client, String.valueOf("§5Day: " + MinecrafteurUtils.getWorldTime(client).getDay()));
+        MinecrafteurUtils.sendChat(client, "§5Day: " + MinecrafteurUtils.getWorldTime(client).getDay());
         sendBlankChat(client);
     }
 

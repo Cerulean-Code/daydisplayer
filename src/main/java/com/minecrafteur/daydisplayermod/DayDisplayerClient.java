@@ -18,11 +18,9 @@ public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer
 
     @Override
     public void onInitializeClient() {
-        // create a key bind to show the day in the chat [ENTER]
         createKeyBindings();
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            while (dayKeyBinding.wasPressed())
-                MinecrafteurUtils.showDay(client);
+            while (dayKeyBinding.wasPressed()) MinecrafteurUtils.showDay(client);
         });
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
