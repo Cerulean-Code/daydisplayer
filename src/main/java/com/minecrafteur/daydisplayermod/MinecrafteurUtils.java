@@ -46,7 +46,7 @@ public class MinecrafteurUtils {
      * @param minecraftClient The instance of the Minecraft client.
      * @return True if the player is in the world and not null; otherwise, false.
      */
-    private static Boolean isPlayerInWorld(MinecraftClient minecraftClient) {
+    public static Boolean isPlayerInWorld(MinecraftClient minecraftClient) {
         return minecraftClient.world != null && minecraftClient.player != null;
     }
 

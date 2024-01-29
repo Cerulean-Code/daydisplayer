@@ -54,10 +54,11 @@ public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer
                 currentDay = MinecrafteurUtils.getWorldTime(client).getDay();
             } else if (tickCount >= 20) {
                 long worldDay = MinecrafteurUtils.getWorldTime(client).getDay();
-                MinecrafteurUtils.sendChat(client, "World day = " + worldDay + "      current day = " + currentDay);
                 if (worldDay > currentDay) {
                     currentDay = worldDay;
                     MinecrafteurUtils.showDay(client);
+                    MinecrafteurUtils.sendChat(minecraftClient, MinecrafteurUtils.colors.getOrDefault("Dark Gray", "") + "-----------------");
+
                 }
                 tickCount = 0;
             }
