@@ -15,19 +15,33 @@ public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer
     public static KeyBinding dayKeyBinding;
     public static KeyBinding dayFullKeyBinding;
 
+    public static int tickCount = 0;
+    public static long currentDay = 0;
 
     @Override
     public void onInitializeClient() {
         createKeyBindings();
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            // Checking every second if the day number has increased
+            if (tickCount >= 20) {
+                long worldDay = MinecrafteurUtils.getWorldTime(client).getDay();
+                if (worldDay > currentDay) {
+                    currentDay = worldDay;
+                    MinecrafteurUtils.showDay(client);
+                }
+                tickCount = 0;
+            }
+            tickCount++;
+
+            // key bind for showing the simple day
             while (dayKeyBinding.wasPressed()) {
                 MinecrafteurUtils.showDay(client);
                 MinecrafteurUtils.sendChat(client, MinecrafteurUtils.colors.getOrDefault("Dark Gray", "") + "-----------------");
 
             }
 
-            while
-            (dayFullKeyBinding.wasPressed()) {
+            // key bind for showing the detailed day
+            while (dayFullKeyBinding.wasPressed()) {
                 MinecrafteurUtils.showFullDay(client);
                 MinecrafteurUtils.sendChat(client, MinecrafteurUtils.colors.getOrDefault("Dark Gray", "") + "-----------------");
 
