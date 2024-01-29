@@ -29,18 +29,15 @@ public class WorldTimePOJO {
         return dayTicks;
     }
 
-    public int getHours() {
-        return hours;
+    public String getHours() {
+        return hours <= 9 ? "0" + hours : String.valueOf(hours);
     }
 
     public String getMinutes() {
-        if (minutes <= 9) {
-            return "0" + minutes;
-        }
-        return String.valueOf(minutes);
+        return minutes <= 9 ? "0" + minutes : String.valueOf(minutes);
     }
 
-    public int getSeconds() {
-        return seconds;
+    public String getSeconds() {
+        return seconds <= 9 ? "0" + seconds : String.valueOf(seconds);
     }
 }
