@@ -35,7 +35,7 @@ public class WorldTimePOJO {
 
     public String getMinutes() {
         if (minutes <= 9) {
-            return String.valueOf("0" + minutes);
+            return "0" + minutes;
         }
         return String.valueOf(minutes);
     }
