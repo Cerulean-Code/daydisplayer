@@ -77,7 +77,6 @@ public class MinecrafteurUtils {
         try {
             ClientWorld world = minecraftClient.world;
             if (world != null) {
-
                 return world.getTimeOfDay();
             } else {
                 LOGGER.error("ClientWorld is null");
@@ -92,8 +91,6 @@ public class MinecrafteurUtils {
 
     public static WorldTimePOJO getWorldTime(MinecraftClient minecraftClient) {
         return new WorldTimePOJO(worldTime(minecraftClient));
-
-
     }
 
     public static void sendBlankChat(MinecraftClient client) {
