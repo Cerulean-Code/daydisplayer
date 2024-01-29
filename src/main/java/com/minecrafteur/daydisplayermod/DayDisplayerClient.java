@@ -16,22 +16,14 @@ public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer
     public static KeyBinding dayFullKeyBinding;
 
     public static int tickCount = 0;
-    public static long currentDay = 0;
+    public static int timeChecked = -1;
+    public static long currentDay = -1;
+
 
     @Override
     public void onInitializeClient() {
         createKeyBindings();
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            // Checking every second if the day number has increased
-            if (tickCount >= 20) {
-                long worldDay = MinecrafteurUtils.getWorldTime(client).getDay();
-                if (worldDay > currentDay) {
-                    currentDay = worldDay;
-                    MinecrafteurUtils.showDay(client);
-                }
-                tickCount = 0;
-            }
-            tickCount++;
 
             // key bind for showing the simple day
             while (dayKeyBinding.wasPressed()) {
@@ -55,9 +47,24 @@ public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer
 
 
     private void onWorldLoad(ClientPlayNetworkHandler clientPlayNetworkHandler, PacketSender packetSender, MinecraftClient minecraftClient) {
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            if (tickCount >= 20 && timeChecked < 1) {
+                timeChecked++;
+                tickCount = 0;
+                currentDay = MinecrafteurUtils.getWorldTime(client).getDay();
+            } else if (tickCount >= 20) {
+                long worldDay = MinecrafteurUtils.getWorldTime(client).getDay();
+                MinecrafteurUtils.sendChat(client, "World day = " + worldDay + "      current day = " + currentDay);
+                if (worldDay > currentDay) {
+                    currentDay = worldDay;
+                    MinecrafteurUtils.showDay(client);
+                }
+                tickCount = 0;
+            }
+            tickCount++;
 
+        });
     }
-
 
     public static void createKeyBindings() {
         dayKeyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.daydisplayer.showday", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_PAGE_UP, "category.daydisplayer.binding"));
