@@ -59,11 +59,12 @@ Download the Day Displayer Mod from [here](https://github.com/Cerulean-Code/dayd
 ### Planned Features
 - [ ] 🌅 **New Day Alert** *(High Priority)*: Automatically displays the start of a new Minecraft day.
 - [ ] 🏆 **Custom Advancements for Day Milestones** *(High Priority)*: Achievements for day milestones.
-- [ ] ⚙️ **Configurable Settings** *(Low Priority)*: Customize mod settings. Potential options include:
-  - [ ] Display Style: Visual styles for the day/time display.
-  - [ ] Display Position: Screen position for day/time info.
-  - [ ] Alert Frequency: Conditions for new day alerts.
+- [ ] ⚙️ **Configurable Settings** *(Low Priority)*: Customization options to enhance player experience. Potential settings include:
+  - [ ] Display Style: Choose from various visual styles for the day/time display.
+  - [ ] Display Position: Adjust the screen position for day/time information.
+  - [ ] Alert Frequency: Set conditions for triggering new day alerts.
   - [ ] Time Format: Toggle between 12-hour and 24-hour clock formats.
+  - [ ] Display on World Load: Option to show or hide the day count when the world first loads
      
 
 
