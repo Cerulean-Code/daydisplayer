@@ -2,7 +2,6 @@ package com.minecrafteur.daydisplayermod;
 
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.text.Text;
 import org.slf4j.Logger;
@@ -70,31 +69,27 @@ public class MinecrafteurUtils {
         return -1;
     }
 
-    public static int worldTimeInDays(MinecraftClient minecraftClient) {
-//        long timeDay = worldTime(minecraftClient);
-//        long day = (int) (timeDay / 24000);
-//        int dayTicks = (int) (timeDay % 24000);
-//        int hour = ((dayTicks / 1000) + 6) % 24;
-//        int minutes = (int) (dayTicks / 16.666666) % 60;
-//        int seconds = (int) (dayTicks / 0.277777) % 60;
-
-        long timeDay = worldTime(minecraftClient);
-        long day = (int) (timeDay / 24000);
-        int dayTicks = (int) (timeDay % 24000);
-        int hour = ((dayTicks / 1000) + 6) % 24;
-        int minutes = (int) ((dayTicks % 1000) / 16.666666);
-        int seconds = (int) ((dayTicks % 16.666666) / 0.277777);
-
-        sendChat(minecraftClient, String.valueOf(timeDay));
-        sendChat(minecraftClient, "§2 day: " + day + " hour: " + hour + " min: " + minutes + " sec: " + seconds);
-//        sendChat(minecraftClient, "§2timeDay: " + String.valueOf(timeDay));
-//        sendChat(minecraftClient, "§2day: " + String.valueOf(day));
-//        sendChat(minecraftClient, "§2dayTicks" + String.valueOf(dayTicks));
-//        sendChat(minecraftClient, "§2hour" + String.valueOf(hour));
-//        sendChat(minecraftClient, "§2minutes" + String.valueOf(minutes));
-//        sendChat(minecraftClient, "§2seconds" + String.valueOf(seconds));
+    public static WorldTimePOJO getWorldTime(MinecraftClient minecraftClient) {
+        return new WorldTimePOJO(worldTime(minecraftClient));
 
 
-        return dayTicks;
     }
+
+    public static void sendBlankChat(MinecraftClient client) {
+        MinecrafteurUtils.sendChat(client, "");
     }
+
+    public static void showDay(MinecraftClient client) {
+        MinecrafteurUtils.sendChat(client, String.valueOf("§5Day: " + MinecrafteurUtils.getWorldTime(client).getDay()));
+        sendBlankChat(client);
+        ;
+    }
+
+    public static void showFullDay(MinecraftClient client) {
+        MinecrafteurUtils.sendChat(client, String.valueOf("§5Day: " + MinecrafteurUtils.getWorldTime(client).getDay()));
+        MinecrafteurUtils.sendChat(client, String.valueOf("§5Hours: " + MinecrafteurUtils.getWorldTime(client).getHours()));
+        MinecrafteurUtils.sendChat(client, String.valueOf("§5Minutes: " + MinecrafteurUtils.getWorldTime(client).getMinutes()));
+        MinecrafteurUtils.sendChat(client, String.valueOf("§5Seconds: " + MinecrafteurUtils.getWorldTime(client).getSeconds()));
+        sendBlankChat(client);
+    }
+}

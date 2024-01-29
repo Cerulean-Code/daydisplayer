@@ -12,17 +12,24 @@ import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
 
 public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer {
-    public static KeyBinding keyBinding;
+    public static KeyBinding dayKeyBinding;
+    public static KeyBinding dayFullKeyBinding;
 
 
     @Override
     public void onInitializeClient() {
         // create a key bind to show the day in the chat [ENTER]
-        createKeyBinding();
+        createKeyBindings();
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            while (keyBinding.wasPressed())
-                MinecrafteurUtils.sendChat(client, String.valueOf("§5Day ticks: " + MinecrafteurUtils.worldTimeInDays(client)));
+            while (dayKeyBinding.wasPressed())
+                MinecrafteurUtils.showDay(client);
         });
+
+        ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            while
+            (dayFullKeyBinding.wasPressed()) MinecrafteurUtils.showFullDay(client);
+        });
+
 
         // Immediately runs when player joins the world
         ClientPlayConnectionEvents.JOIN.register(this::onWorldLoad);
@@ -34,8 +41,9 @@ public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer
     }
 
 
-    public static void createKeyBinding() {
-        keyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.daydisplayer.show", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_ENTER, "category.daydisplayer.test"));
+    public static void createKeyBindings() {
+        dayKeyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.daydisplayer.showday", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_PAGE_UP, "category.daydisplayer.binding"));
+        dayFullKeyBinding = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.daydisplayer.showfullday", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_PAGE_DOWN, "category.daydisplayer.binding"));
     }
 }
 
