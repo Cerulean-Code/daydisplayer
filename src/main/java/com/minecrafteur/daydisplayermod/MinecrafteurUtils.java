@@ -82,14 +82,13 @@ public class MinecrafteurUtils {
     public static void showDay(MinecraftClient client) {
         MinecrafteurUtils.sendChat(client, String.valueOf("§5Day: " + MinecrafteurUtils.getWorldTime(client).getDay()));
         sendBlankChat(client);
-        ;
     }
 
     public static void showFullDay(MinecraftClient client) {
-        MinecrafteurUtils.sendChat(client, String.valueOf("§5Day: " + MinecrafteurUtils.getWorldTime(client).getDay()));
-        MinecrafteurUtils.sendChat(client, String.valueOf("§5Hours: " + MinecrafteurUtils.getWorldTime(client).getHours()));
-        MinecrafteurUtils.sendChat(client, String.valueOf("§5Minutes: " + MinecrafteurUtils.getWorldTime(client).getMinutes()));
-        MinecrafteurUtils.sendChat(client, String.valueOf("§5Seconds: " + MinecrafteurUtils.getWorldTime(client).getSeconds()));
+        MinecrafteurUtils.sendChat(client, "§5Day: " + MinecrafteurUtils.getWorldTime(client).getDay());
+        MinecrafteurUtils.sendChat(client, "§5Hours: " + MinecrafteurUtils.getWorldTime(client).getHours());
+        MinecrafteurUtils.sendChat(client, "§5Minutes: " + MinecrafteurUtils.getWorldTime(client).getMinutes());
+        MinecrafteurUtils.sendChat(client, "§5Seconds: " + MinecrafteurUtils.getWorldTime(client).getSeconds());
         sendBlankChat(client);
     }
 }
