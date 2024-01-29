@@ -8,14 +8,35 @@ import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
 
+import java.util.HashMap;
 
 public class MinecrafteurUtils {
     protected static String MOD_ID;
     protected static Logger LOGGER;
+    protected static HashMap<String, String> colors;
+
 
     public MinecrafteurUtils() {
         MOD_ID = "daydisplayermod";
         LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+        colors = new HashMap<>();
+        colors.put("Black", "§0");
+        colors.put("Dark Blue", "§1");
+        colors.put("Dark Green", "§2");
+        colors.put("Dark Aqua", "§3");
+        colors.put("Dark Red", "§4");
+        colors.put("Purple", "§5");
+        colors.put("Gold", "§6");
+        colors.put("Gray", "§7");
+        colors.put("Dark Gray", "§8");
+        colors.put("Indigo", "§9");
+        colors.put("Bright Green", "§a");
+        colors.put("Aqua", "§b");
+        colors.put("Red", "§c");
+        colors.put("Pink", "§d");
+        colors.put("Yellow", "§e");
+        colors.put("White", "§f");
     }
 
 
@@ -80,15 +101,15 @@ public class MinecrafteurUtils {
     }
 
     public static void showDay(MinecraftClient client) {
-        MinecrafteurUtils.sendChat(client, "§5Day: " + MinecrafteurUtils.getWorldTime(client).getDay());
-        sendBlankChat(client);
+        DayDisplayerHelperUtils.sendModNameInChat(client);
+        MinecrafteurUtils.sendChat(client, MinecrafteurUtils.colors.getOrDefault("White", "") + "Current Day: " + MinecrafteurUtils.getWorldTime(client).getDay());
     }
 
     public static void showFullDay(MinecraftClient client) {
-        MinecrafteurUtils.sendChat(client, "§5Day: " + MinecrafteurUtils.getWorldTime(client).getDay());
-        MinecrafteurUtils.sendChat(client, "§5Hours: " + MinecrafteurUtils.getWorldTime(client).getHours());
-        MinecrafteurUtils.sendChat(client, "§5Minutes: " + MinecrafteurUtils.getWorldTime(client).getMinutes());
-        MinecrafteurUtils.sendChat(client, "§5Seconds: " + MinecrafteurUtils.getWorldTime(client).getSeconds());
+        showDay(client);
+        MinecrafteurUtils.sendChat(client, MinecrafteurUtils.colors.getOrDefault("White", "") + "Time: " + MinecrafteurUtils.getWorldTime(client).getHours() + ":" + MinecrafteurUtils.getWorldTime(client).getMinutes() + ":" + MinecrafteurUtils.getWorldTime(client).getSeconds());
         sendBlankChat(client);
     }
+
+
 }

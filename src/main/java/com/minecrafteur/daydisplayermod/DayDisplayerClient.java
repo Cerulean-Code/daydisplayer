@@ -20,12 +20,16 @@ public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer
     public void onInitializeClient() {
         createKeyBindings();
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            while (dayKeyBinding.wasPressed()) MinecrafteurUtils.showDay(client);
+            while (dayKeyBinding.wasPressed()) {
+                MinecrafteurUtils.showDay(client);
+            }
         });
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while
-            (dayFullKeyBinding.wasPressed()) MinecrafteurUtils.showFullDay(client);
+            (dayFullKeyBinding.wasPressed()) {
+                MinecrafteurUtils.showFullDay(client);
+            }
         });
 
 
