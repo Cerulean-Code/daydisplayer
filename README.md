@@ -8,9 +8,9 @@ Welcome to the Day Displayer Mod! Enhance your Minecraft experience by tracking 
 - **⌨️ Keyboard Shortcuts for Time Display:**
   - **Simple Day Count Keybind:** Press a key to display the current day `Day: X`.
   - **Detailed Time Format Keybind:** Press another key for a detailed time display `Day: X, Hour: X, Minutes: X, Seconds: X`.
+- **🌅 New Day Alert:** Automatically displays the start of a new Minecraft day.
 
 ### Future Features
-- **🌅 New Day Alert:** Automatically displays the start of a new Minecraft day.
 - **🏆 Custom Advancements for Day Milestones:** Achievements for reaching day milestones (1, 5, 10, 15, 30, 50, 75, 100 days).
 
 ## 📸 Screenshots
@@ -55,20 +55,18 @@ Download the Day Displayer Mod from [here](https://github.com/Cerulean-Code/dayd
 ### Implemented Features
 - [x] 🗝 **Simple Day Count Format**
 - [x] ⏱ **Detailed Time Format**
-
+- [x] 🌅 **New Day Alert**
+      
 ### Planned Features
-- [ ] 🌅 **New Day Alert** *(High Priority)*: Automatically displays the start of a new Minecraft day.
-- [ ] 🏆 **Custom Advancements for Day Milestones** *(High Priority)*: Achievements for day milestones.
-- [ ] ⚙️ **Configurable Settings** *(Low Priority)*: Customization options to enhance player experience. Potential settings include:
-  - [ ] Display Style: Choose from various visual styles for the day/time display.
-  - [ ] Display Position: Adjust the screen position for day/time information.
-  - [ ] Alert Frequency: Set conditions for triggering new day alerts.
-  - [ ] Time Format: Toggle between 12-hour and 24-hour clock formats.
-  - [ ] Display on World Load: Option to show or hide the day count when the world first loads
+- 🏆 **Custom Advancements for Day Milestones**: Achievements for reaching day milestones (1, 5, 10, 15, 30, 50, 75, 100 days).
+- ⚙️ **Configurable Settings**: Customization options to enhance player experience. Potential settings include:
+  - Display Style: Choose from various visual styles for the day/time display.
+  - Display Position: Adjust the screen position for day/time information.
+  - Alert Frequency: Set conditions for triggering new day alerts.
+  - Time Format: Toggle between 12-hour and 24-hour clock formats.
+  - Display on World Load: Option to show or hide the day count when the world first loads.
+  - New Day Alert Toggle: Option to enable or disable the automatic new day alert.
      
-
-
-
 
 ## 💬 Feedback and Contributions
 
