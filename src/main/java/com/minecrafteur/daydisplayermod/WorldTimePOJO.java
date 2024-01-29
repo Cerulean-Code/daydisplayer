@@ -33,8 +33,11 @@ public class WorldTimePOJO {
         return hours;
     }
 
-    public int getMinutes() {
-        return minutes;
+    public String getMinutes() {
+        if (minutes <= 9) {
+            return String.valueOf("0" + minutes);
+        }
+        return String.valueOf(minutes);
     }
 
     public int getSeconds() {
