@@ -11,9 +11,7 @@ import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import org.apache.logging.log4j.core.jmx.Server;
 import org.lwjgl.glfw.GLFW;
 
 public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer {
@@ -24,13 +22,6 @@ public class DayDisplayerClient implements net.fabricmc.api.ClientModInitializer
     public static int tickCount = 0;
     public static int timeChecked = -1;
     public static long currentDay = -1;
-
-    // advancements
-
-    public static boolean isServerLoaded = false;
-
-    //client info
-    public static String uuid = "";
 
     //server world
     public static MinecraftServer MINECRAFTSERVER;
