@@ -1,0 +1,30 @@
+{
+  "parent": "daydisplayermod:playing_hardcore",
+  "criteria": {
+    "survive_1": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "You survived your first night!"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "minecraft:red_bed"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Survived the night!"
+    }
+  },
+  "requirements": [
+    [
+      "survive_1"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

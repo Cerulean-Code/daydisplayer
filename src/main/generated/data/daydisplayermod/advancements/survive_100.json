@@ -1,0 +1,30 @@
+{
+  "parent": "daydisplayermod:playing_hardcore",
+  "criteria": {
+    "survive_100": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "100 days of adventures greater than Pooh could have ever imagined."
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "minecraft:pink_bed"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "The Hundred Acre Wood"
+    }
+  },
+  "requirements": [
+    [
+      "survive_100"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

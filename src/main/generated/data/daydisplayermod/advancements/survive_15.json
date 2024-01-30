@@ -1,0 +1,30 @@
+{
+  "parent": "daydisplayermod:playing_hardcore",
+  "criteria": {
+    "survive_15": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "plus one"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "minecraft:blue_bed"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "FORTNITE"
+    }
+  },
+  "requirements": [
+    [
+      "survive_15"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

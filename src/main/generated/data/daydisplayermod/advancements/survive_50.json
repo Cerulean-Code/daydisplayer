@@ -1,0 +1,30 @@
+{
+  "parent": "daydisplayermod:playing_hardcore",
+  "criteria": {
+    "survive_50": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "The queen would be proud"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "minecraft:magenta_bed"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Golden Jubilee"
+    }
+  },
+  "requirements": [
+    [
+      "survive_50"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

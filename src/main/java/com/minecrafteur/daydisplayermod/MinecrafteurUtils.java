@@ -1,9 +1,13 @@
 package com.minecrafteur.daydisplayermod;
 
 
+import net.minecraft.advancement.Advancement;
+import net.minecraft.advancement.AdvancementProgress;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.world.ClientWorld;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
@@ -105,6 +109,21 @@ public class MinecrafteurUtils {
         showDay(client);
         MinecrafteurUtils.sendChat(client, MinecrafteurUtils.colors.getOrDefault("White", "") + "Time: " + MinecrafteurUtils.getWorldTime(client).getHours() + ":" + MinecrafteurUtils.getWorldTime(client).getMinutes() + ":" + MinecrafteurUtils.getWorldTime(client).getSeconds());
 
+    }
+
+    public static void grantAdvancement(ServerPlayerEntity player, String advancementId) {
+        Identifier id = new Identifier(advancementId);
+        Advancement advancement = player.getServer().getAdvancementLoader().get(id);
+        if (advancement != null) {
+            AdvancementProgress advancementProgress = player.getAdvancementTracker().getProgress(advancement);
+            if (!advancementProgress.isDone()) {
+                for (String criterion : advancement.getCriteria().keySet()) {
+                    player.getAdvancementTracker().grantCriterion(advancement, criterion);
+                }
+            }
+        }else {
+            LOGGER.error(id + " is not a valid advancement id");
+        }
     }
 
 }

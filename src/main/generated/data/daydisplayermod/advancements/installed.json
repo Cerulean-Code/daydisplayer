@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "installed_daydisplayer": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "Thanks for downloading my mod :)"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:clock"
+    },
+    "show_toast": false,
+    "title": {
+      "text": "Day Displayer"
+    }
+  },
+  "requirements": [
+    [
+      "installed_daydisplayer"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

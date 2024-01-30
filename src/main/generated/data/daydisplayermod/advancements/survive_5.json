@@ -1,0 +1,30 @@
+{
+  "parent": "daydisplayermod:playing_hardcore",
+  "criteria": {
+    "survive_5": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "at Freddy's"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "minecraft:orange_bed"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Five nights..."
+    }
+  },
+  "requirements": [
+    [
+      "survive_5"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

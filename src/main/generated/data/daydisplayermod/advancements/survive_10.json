@@ -1,0 +1,30 @@
+{
+  "parent": "daydisplayermod:playing_hardcore",
+  "criteria": {
+    "survive_10": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "Talk later, survive now."
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "minecraft:green_bed"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Ben 10"
+    }
+  },
+  "requirements": [
+    [
+      "survive_10"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

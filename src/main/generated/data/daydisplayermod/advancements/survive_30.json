@@ -1,0 +1,30 @@
+{
+  "parent": "daydisplayermod:playing_hardcore",
+  "criteria": {
+    "survive_30": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "text": "again... and again."
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "minecraft:blue_bed"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "Groundhog month"
+    }
+  },
+  "requirements": [
+    [
+      "survive_30"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
