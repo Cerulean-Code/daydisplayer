@@ -9,9 +9,8 @@ Welcome to the Day Displayer Mod! Enhance your Minecraft experience by tracking 
   - **Simple Day Count Keybind:** Press a key to display the current day `Day: X`.
   - **Detailed Time Format Keybind:** Press another key for a detailed time display `Day: X, Hour: X, Minutes: X, Seconds: X`.
 - **🌅 New Day Alert:** Automatically displays the start of a new Minecraft day.
+- **🏆 Custom Advancements:** Advancements for reaching day milestones in hardcore mode.
 
-### Future Features
-- **🏆 Custom Advancements for Day Milestones:** Achievements for reaching day milestones (1, 5, 10, 15, 30, 50, 75, 100 days).
 
 ## 📸 Screenshots
 
@@ -56,9 +55,10 @@ Download the Day Displayer Mod from [here](https://github.com/Cerulean-Code/dayd
 - [x] 🗝 **Simple Day Count Format**
 - [x] ⏱ **Detailed Time Format**
 - [x] 🌅 **New Day Alert**
+- [x] 🏆 **Custom Advancements for Day Milestones**
+      
       
 ### Planned Features
-- 🏆 **Custom Advancements for Day Milestones**: Achievements for reaching day milestones (1, 5, 10, 15, 30, 50, 75, 100 days).
 - ⚙️ **Configurable Settings**: Customization options to enhance player experience. Potential settings include:
   - Display Style: Choose from various visual styles for the day/time display.
   - Display Position: Adjust the screen position for day/time information.
